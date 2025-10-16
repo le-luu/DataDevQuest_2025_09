@@ -1,3 +1,7 @@
+//============= DataDevQuest 2025_09 Beginner Challenge =============
+//============= Challenged by: Kyle Massey              =============
+//============= Solved by: Le Luu                       =============
+
 const viz = document.getElementById("tableauViz");
 const loadingSpinner = document.getElementById("loadingSpinner");
 const successMessage = document.getElementById("successMessage");

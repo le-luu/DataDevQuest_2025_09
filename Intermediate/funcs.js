@@ -1,3 +1,7 @@
+//============= DataDevQuest 2025_09 Intermediate Challenge =============
+//============= Challenged by: Kyle Massey              =============
+//============= Solved by: Le Luu                       =============
+
 var selectedMarksColumns = [];
 var selectedMarksData = [];
 var formattedData = [];
