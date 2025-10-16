@@ -12,7 +12,7 @@ Kyle Massey
 - Add the Event Listerner with Javascript to perform the action on the webpage
 
 ### Solution Video
-[![DDQ_2025_07](https://img.youtube.com/vi/DnZodzxS1HE/0.jpg)](https://www.youtube.com/watch?v=DnZodzxS1HE)
+[![DDQ_2025_09](https://img.youtube.com/vi/DnZodzxS1HE/0.jpg)](https://www.youtube.com/watch?v=DnZodzxS1HE)
 
 ### Beginner Challenge
 Link to the Beginner Challenge: https://datadevquest.com/ddq2025-09-embed-tableau-content-w-the-embedding-api-beginner/
@@ -24,13 +24,17 @@ Link to the Beginner Challenge: https://datadevquest.com/ddq2025-09-embed-tablea
 
 **Output**
 
-![image](https://github.com/le-luu/DataDevQuest_2025_07/blob/main/img/beginner_graphql_query.png)
+![image](https://github.com/le-luu/DataDevQuest_2025_09/blob/main/img/ddq2025_09_Beginner_Output.png)
 
-The GraphQL query to retrive the workbook details (id, name, project Name, owner) without using filter and with filter.
+From the output result on the webpage above, the loading spinner is hidden and the success message is showing. It will be hidden in 2 seconds.
 
-![image](https://github.com/le-luu/DataDevQuest_2025_07/blob/main/img/output_beginner_ddq_2025_07.png)
+![image](https://github.com/le-luu/DataDevQuest_2025_09/blob/main/img/ddq2025_09_Beginner_html.png)
 
-In the Python script, I listed all the workbooks on the site. Then, let the user choose 1 workbook to get more details.
+In the index.html file, Add the Tableau dashboard link in the TableauViz tag and import the custom script tag (apps.js). 
+
+![image](https://github.com/le-luu/DataDevQuest_2025_09/blob/main/img/ddq2025_09_Beginner_js.png)
+
+In the apps.js file, I defined a function called onFirstInteractive. It helped me to check in the console if the dashboard is loaded. The loadingSpinner class will add the loading-hidden from css to hide. At the beginning, I already set the successMessage in html file is loading-hidden. Now, when the onFirstInteractive function run, it will remove the loading-hidden property to show the successMessage. Finally call EventListener to perform the action with function onFirstInteractive.
 
 ### Intermediate Challenge
 Link to the Intermediate Challenge: https://datadevquest.com/ddq2025-09-embed-interactive-tableau-content-w-the-embedding-api-intermediate/
@@ -45,23 +49,25 @@ Link to the Intermediate Challenge: https://datadevquest.com/ddq2025-09-embed-in
 
 **Output**
 
-![image](https://github.com/le-luu/DataDevQuest_2025_07/blob/main/img/Intermediate_schema.png)
+[![DDQ_2025_09](https://img.youtube.com/vi/buJTJIEI9ko/0.jpg)](https://www.youtube.com/watch?v=buJTJIEI9ko)
 
-One benefit of using MetaData API is I can combine multiple queries into one GraphQL query to extract the data I want. With REST API, I couldn't do that. To extract different data, I need to use different endpoint.
+From the output video above, the loading spinner is hidden. When the Tableau dashboard is ready to load, it will show the success message. The user can interact with the map on the dashboard. After selecting some marks on the dashboard, the details pane will show on the right. It will list all selected marks. It also updates how many total marks have been selected. When the user remove any states in the list, it will also update the total marks. If the user clicks on the button "Clear All Selections", it will remove all states in the list and come back to the dashboard.
 
-I built a Python program with this schema. First, I will write a query to list all workbooks and published data source in one GraphQL query. Then, I will let the user choose 2 options:
-- Option 1: Select a workbook on the list to explore more details (including workbook id, name, project Name, owner id, owner name, published data source connected by that specified workbook)
-- Option 2: Select a published data source on the list to explore more details (including luid, name, and the connected workbook to that published data source with its id, name, project Name, owner id, owner name)
+![image](https://github.com/le-luu/DataDevQuest_2025_09/blob/main/img/ddq2025_09_Intermediate_index.png)
 
-![image](https://github.com/le-luu/DataDevQuest_2025_07/blob/main/img/intermediate_graphql_query.png)
+In the index.html file, I defined the onFirstInteractive function same as the Beginner challenge above. But adding another function called onSelectionChanged there to let the user select the marks. After hiding the success message, get the dashboard and worksheet, also call the event listener for onSelectionChange which will be declared below.
 
-- These are 3 GraphQL queries that I used to extract the metadata. The first query listwb_pbl_datasource will query all workbooks and published data source.
-- The second query (getworkbookDetails) will apply the workbook_name variable in the filter for option 1 above
-- The third query (getpbdsDetails) will apply the published data source name variable in the filter for option 2 above
+The onSelectionChanged function will handle the mark selection. If no mark is selected, the details pane will be hidden. If user selects marks, it will store the data in selectedMarksData and count how many selected marks. From the selectionMessage above, it will show the total mark number and also checking plural.
 
-![image](https://github.com/le-luu/DataDevQuest_2025_07/blob/main/img/output_intermediate_ddq_2025_07.png)
+After that, the buildStateDOMList is called by passing the selectedWorksheet (currently is SaleMap only). This function in the funcs.js is used to show all selected states on the list in the details pane. It also checks if profit ratio is >0 then showing green text with arrow up, otherwise, it will be orange text and arrow down.
 
-The output of the program.
+At the end, function showHideDetailsPane will be called to show or hide the details pane. If no marks (or States) in the details Pane, it will hide the details pane.
+
+![image](https://github.com/le-luu/DataDevQuest_2025_09/blob/main/img/ddq2025_09_Intermediate_js.png)
+
+In the funcs.js file, I added an updateSelectionMessage function to keep updating the total marks on the list in the details pane if the user removes any states below. 
+
+I edited the selectStateMarks function. This function is used to filter by keeping the selected states in the formattedData array. Then, call buildStateDOMList function to format the states in details pane, update the total marks in updateSelectionMessage function. Check if there are still marks in the list to show/hide the pane. At the end, it will check and update the list.
 
 ### Instructions
 
