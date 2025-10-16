@@ -1,0 +1,64 @@
+.offcanvas-body {
+  overflow-x: hidden;
+}
+
+.clickable-x {
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.loading-spinner {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+}
+
+.loading-hidden {
+  display: none;
+}
+
+.text-not-ready {
+  color: orange;
+  font-style: italic;
+}
+
+.text-ready {
+  color: green;
+  font-weight: bold;
+}
+
+.double-em {
+  font-size: 2em;
+}
+
+.main-container-width {
+  max-width: 85%;
+}
+
+.html-height {
+  height: 100%;
+}
+
+.body-height {
+  height: 90%;
+}
+
+.loading-text {
+  color: orange;
+}
+
+.orange-text {
+  color: orange;
+}
+
+.green-text {
+  color: rgb(50, 255, 31);
+}

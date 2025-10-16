@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" class="html-height">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <title>DataDevQuest - DDQ2025-09 - Embedding: Beginner</title>
+  </head>
+
+  <body class="body-height">
+    <nav class="navbar bg-body-secondary">
+      <div class="container-fluid">
+        <a class="navbar-brand"
+          ><i class="bi bi-globe-americas-fill pe-3"></i>DataDevQuest - 2025-09:
+          Beginner
+        </a>
+
+        <div id="loadingSpinner" class="loading-spinner">
+          <div
+            class="spinner-border spinner-border-sm loading-text"
+            role="status"
+          >
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <span class="ms-2 loading-text">Tableau content is loading...</span>
+        </div>
+
+        <div id="successMessage" class="text-ready text-center loading-hidden">
+          <i class="bi bi-check-circle-fill me-2"></i>
+          Tableau content is ready!
+        </div>
+
+        <div class="d-flex align-items-center">
+          <span class="double-em">
+            <i class="bi bi-person-fill me-2"></i>
+          </span>
+          <span> Le </span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid d-flex h-100 main-container-width">
+      <!-- Adding the Tableau Dashboard here-->
+      <tableau-viz
+        id="tableauViz"
+        src="https://public.tableau.com/views/Wow_tracking_challenges/WOWTableauTracker"
+        width="90vw"
+        height="100vh"
+        toolbar="top"
+      >
+      </tableau-viz>
+    </div>
+
+    <!--  Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Tableau Embedding API -->
+    <script
+      type="module"
+      src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
+    ></script>
+    <!-- Add the app javascript where declared the firstInteractive function-->
+    <script src="./app.js"></script>
+  </body>
+</html>
