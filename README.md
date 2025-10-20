@@ -12,7 +12,7 @@ Kyle Massey
 - Add the Event Listerner with Javascript to perform the action on the webpage
 
 ### Solution Video
-[![DDQ_2025_09](https://img.youtube.com/vi/DnZodzxS1HE/0.jpg)](https://www.youtube.com/watch?v=DnZodzxS1HE)
+[![DDQ_2025_09](https://img.youtube.com/vi/e16uv7AnDqE/0.jpg)](https://www.youtube.com/watch?v=e16uv7AnDqE)
 
 ### Beginner Challenge
 Link to the Beginner Challenge: https://datadevquest.com/ddq2025-09-embed-tableau-content-w-the-embedding-api-beginner/
