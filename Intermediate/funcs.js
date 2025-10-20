@@ -169,6 +169,10 @@ function selectStateMarks(worksheet, states) {
     selectedMarksData = [];
   } else {
     // Otherwise, update the states in the worksheet
-    worksheet.selectMarksAsync("State", states, SelectionUpdateType.Replace);
+    worksheet.selectMarksByValueAsync(
+      [{ fieldName: "State", value: states }],
+      SelectionUpdateType.Replace
+    );
   }
 }
+
